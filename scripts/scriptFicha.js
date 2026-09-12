@@ -21,7 +21,7 @@ const rollD2 = document.getElementById('rollD2');
 if (mariD2 && rollD2) {
 	rollD2.addEventListener('click', () => {
 		const result = Math.random() < 0.5 ? 1 : 2;
-		const finalRotation = result === 1 ? 180 : 0;
+		const finalRotation = result === 1 ? 0 : 180;
 		const currentRotation = Number(mariD2.dataset.rotation || 0);
 		const nextRotation = currentRotation + 1080 + finalRotation - (currentRotation % 360);
 

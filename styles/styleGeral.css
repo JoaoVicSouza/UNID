@@ -26,6 +26,8 @@ html, body {
   top: 0;
   left: 0;
   height: 100vh;
+  min-height: 100vh;
+  height: 100dvh;
   width: min(78vw, 300px);
   background: var(--plum);
   color: var(--cream);
@@ -46,7 +48,8 @@ html, body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 3rem 1.75rem 2rem;
+  min-height: 100dvh;
+  padding: 3rem 1.75rem calc(3rem + env(safe-area-inset-bottom));
 }
  
 .sidebar-links {
@@ -73,14 +76,16 @@ html, body {
  
 .sidebar-brand {
   position: absolute;
-  bottom: 2rem;
-  font-family: 'Cormorant Garamond', serif;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--cream);
   left: 50%;
   transform: translateX(-50%);
+  white-space: nowrap;
+  line-height: 1;
 }
  
 /* Botão-gatilho: meio círculo na borda da tela */
@@ -167,11 +172,14 @@ html, body {
     background: transparent;
     border: none;
     border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
 }
 
 .has-submenu.open .submenu {
     max-height: 1000px;
-    margin: 0.5rem 0 0 0;
+    margin: 0.65rem 0 0 0;
 }
 
 /* Remove as setas (spinners) dos inputs type="number" */

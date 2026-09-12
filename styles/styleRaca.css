@@ -1,28 +1,26 @@
 :root {
-    --porte-grande: #b3492f;
-    --porte-medio: #c9a13b;
-    --porte-pequeno: #4f7a5c;
-    --bruxo: #7c4dbf;
-    --vampiro: #7E0000;
-    --impresso: #D1BC97;
-    --corpo-fantoche: #6b7fb8;
-    --corpo-automato: #8a8a8a;
-    --corpo-petrificado: #7d7460;
-    --tronco-accent: #2f4f9e;
-    --extinto-critico: #8a2e20;
-    --torturado-accent: #6b1f2a;
+    --tv-shell-1: #e4d6ae;
+    --tv-shell-2: #c9b47f;
+    --tv-dark: #211d1a;
     --roll-fail: #8a2e20;
     --roll-success: #2f6b3c;
-    --page-bg: #0c0a0e;
+    --race-page-bg: #600b04;
+    --race-page-text: #F7EBDD;
+    --race-page-text-soft: #F0D7CB;
 }
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    background-color: var(--race-page-bg);
+}
+
 body {
     margin: 0;
-    background: var(--page-bg);
+    background-color: var(--race-page-bg);
+    color: var(--race-page-text);
 }
 
 .hero {
@@ -32,6 +30,7 @@ body {
     justify-content: center;
     padding: 2.5rem 1.75rem;
     padding-left: 2.75rem;
+    color: var(--race-page-text);
 }
 
 .title {
@@ -41,12 +40,13 @@ body {
     line-height: 1.25;
     margin: 0 auto 1.25rem;
     max-width: 22ch;
+    color: var(--race-page-text);
 }
 
 .text {
     font-size: 1rem;
     line-height: 1.6;
-    color: rgba(59, 36, 48, 0.8);
+    color: var(--race-page-text-soft);
     max-width: 42ch;
     margin: 0 auto 2rem;
     text-align: justify;
@@ -54,17 +54,19 @@ body {
 
 .float {
     float: left;
-    width: 500px;
-    max-width: 60%;
+    width: clamp(230px, 34vw, 380px);
+    max-width: 45%;
     height: auto;
-    margin-right: 12px;
+    margin: 0 14px 12px 0;
     border-radius: 8px;
 }
 
 .float.center {
-    max-width: 100%;
-    margin: 0 auto;
     float: none;
+    display: block;
+    width: min(100%, 480px);
+    max-width: 100%;
+    margin: 0 auto 1rem;
 }
 
 /* ============================================
@@ -79,10 +81,14 @@ body {
     position: relative;
     max-width: 42ch;
     margin: 0 auto 2rem;
-    background: linear-gradient(160deg, var(--tv-shell-1), var(--tv-shell-2));
+    background-color: #190003;
     border-radius: 14px;
-    color: var(--tv-dark);
+    color: var(--race-page-text);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* dois grupos de padding: cards "de grade" (porte/corpo) vs cards "solo" (race/ability) */
@@ -96,47 +102,17 @@ body {
     padding: 1.5rem 1.25rem 1.4rem;
 }
 
-/* faixa de destaque no topo: porte-card usa ::before (fica por cima, sem empurrar
-   o conteúdo); corpo/race/ability usam border-top (empurra o conteúdo) — mantido
-   assim de propósito para preservar a diferença visual entre os dois estilos */
+/* Cards sem faixa de destaque. */
 .porte-card {
     overflow: hidden;
 }
 
-.porte-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: var(--accent);
+.text-center {
+    text-align: center;
 }
 
-.corpo-card,
-.race-card,
-.ability-card {
-    border-top: 6px solid;
-}
-
-.corpo-card { border-top-color: var(--accent); }
-.race-card { border-top-color: var(--tronco-accent); }
-.ability-card { border-top-color: var(--torturado-accent); }
-
-/* mapeamento de cor por variante — um por linha, mais fácil de escanear */
-.porte-card[data-porte="grande"]   { --accent: var(--porte-grande); }
-.porte-card[data-porte="medio"]    { --accent: var(--porte-medio); }
-.porte-card[data-porte="pequeno"]  { --accent: var(--porte-pequeno); }
-.porte-card[data-porte="bruxo"]    { --accent: var(--bruxo); }
-.porte-card[data-porte="vampiro"]  { --accent: var(--vampiro); }
-.porte-card[data-porte="impresso"] { --accent: var(--impresso); }
-
-.corpo-card[data-corpo="fantoche"]    { --accent: var(--corpo-fantoche); }
-.corpo-card[data-corpo="automato"]    { --accent: var(--corpo-automato); }
-.corpo-card[data-corpo="petrificado"] { --accent: var(--corpo-petrificado); }
-
-.race-card[data-race="torturado"]::before {
-    background: var(--torturado-accent);
+.mb-0 {
+    margin-bottom: 0;
 }
 
 .porte-card__top {
@@ -159,7 +135,7 @@ body {
 .porte-size__dot {
     display: block;
     border-radius: 50%;
-    background: var(--accent);
+    background: #b3492f;
     box-shadow: 0 0 0 3px rgba(33, 29, 26, 0.12);
 }
 
@@ -207,12 +183,12 @@ body {
     font-weight: 600;
     padding: 0.2rem 0.55rem;
     border-radius: 999px;
-    background: var(--torturado-accent);
+    background: #6b1f2a;
     color: var(--tv-shell-1);
 }
 
 .ability-card__lvl.tec {
-    background: var(--tronco-accent);
+    background: #2f4f9e;
 }
 
 /* ===== descrições em itálico: porte e corpo compartilham tudo menos a margem ===== */
@@ -417,7 +393,7 @@ body {
     bottom: -14px;
     left: 13px;
     width: 2px;
-    background: linear-gradient(to bottom, var(--tronco-accent), var(--extinto-critico));
+    background: linear-gradient(to bottom, #2f4f9e, #8a2e20);
 }
 
 .extinto-step:last-child {
@@ -436,7 +412,7 @@ body {
     justify-content: center;
     font-weight: 700;
     font-size: 0.9rem;
-    background: var(--tronco-accent);
+    background: #2f4f9e;
     color: var(--tv-shell-1);
 }
 
@@ -446,7 +422,7 @@ body {
     line-height: 1.5;
 }
 
-.extinto-step--critico .extinto-step__marker { background: var(--extinto-critico); }
+.extinto-step--critico .extinto-step__marker { background: #8a2e20; }
 .extinto-step--critico p { font-weight: 600; }
 
 .rule-block {
