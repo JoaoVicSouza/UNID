@@ -1,0 +1,95 @@
+:root {
+  --plum: #2E1B26;
+  --plum-light: #4A2E3D;
+  --rose: #C1707B;
+  --rose-deep: #A85763;
+  --cream: #F7F0EA;
+  --fur: #6B4226;
+  --gold: #C9A227;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--plum);
+  color: var(--cream);
+  font-family: 'Manrope', sans-serif;
+  min-height: 100vh;
+}
+
+.seres-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem 4rem 2.75rem;
+  text-align: center;
+}
+
+.seres-eyebrow {
+  font-size: 0.85rem;
+  color: var(--rose);
+  margin: 0 0 0.5rem;
+}
+
+.seres-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 2.75rem;
+}
+
+.race-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+.race-btn {
+  position: relative;
+  width: 100%;
+  height: 68px;
+  border-radius: 10px;
+  border: 8px solid rgba(247, 240, 234, 0.15);
+  background: var(--plum-light);
+  color: var(--cream);
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.race-btn:hover {
+  border-color: var(--rose);
+  background: #57394A;
+}
+
+/* ---------- Telas maiores ---------- */
+
+@media (min-width: 720px) {
+  .sidebar {
+    width: 280px;
+  }
+
+  .seres-page {
+    padding-left: 4rem;
+  }
+
+  .seres-title {
+    font-size: 3rem;
+  }
+}
+
+.sidebar-brand {
+  position: absolute;
+  bottom: 0;
+}

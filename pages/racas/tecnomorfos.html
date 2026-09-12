@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seres - Tecnomorfos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/styleGeral.css">
+    <link rel="stylesheet" href="../../styles/styleRaca.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="sidebar" id="sidebar" aria-label="Navegação principal">
+        <div class="sidebar-inner h-100 position-relative">
+            <ul class="sidebar-links">
+                <li><a href="../../index.html">Início</a></li>
+                <li class="has-submenu">
+                    <div class="submenu-header">
+                        <a href="../seres.html" class="active">Seres</a>
+                        <button class="submenu-arrow" aria-label="Expandir Seres">▾</button>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="humanos.html">Humanos</a></li>
+                        <li><a href="aberrados.html">Aberrados</a></li>
+                        <li><a href="anomalos.html">Anômalos</a></li>
+                        <li><a href="vampiros.html">Vampiros</a></li>
+                        <li><a href="impressores.html">Impressores</a></li>
+                        <li><a href="troncoAberto.html">Troncos Abertos</a></li>
+                        <li><a href="corpoFantoche.html">Corpos Fantoches</a></li>
+                        <li><a href="deslumbridos.html">Deslumbridos</a></li>
+                        <li><a href="tecnomorfos.html" class="active">Tecnomorfos</a></li>
+                        <li><a href="lembrados.html">Lembrados</a></li>
+                        <li><a href="torturados.html">Torturados</a></li>
+                    </ul>
+                </li>
+                <li><a href="../montagem.html">Montagem</a></li>
+                <li><a href="../criacao.html">Ficha</a></li>
+                <li><a href="../historia.html">A História</a></li>
+            </ul>
+            <span class="sidebar-brand position-absolute bottom-0">U.N.I.D.</span>
+        </div>
+
+        <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-controls="sidebar"
+            aria-label="Abrir menu de navegação">
+            <img src="../../assets/mariposa.png" alt="" class="sidebar-toggle-img">
+        </button>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+    <main class="hero text-center">
+        <h1 class="title">Tecnomorfos</h1>
+        <p class="text mb-0">
+            Os Tecnomorfos são entidades parasitárias de origem desconhecida, com uma natureza profundamente ligada à
+            tecnologia. <img src="../../assets/Tecnomorfo1.jfif.jpeg" alt="" class="float center"> Eles habitam zonas
+            obstruídas.
+            Por não possuírem um corpo físico próprio, os Tecnomorfos se apropriam de dispositivos tecnológicos para
+            construir uma forma corpórea rudimentar. Essa "armadura de ferro" geralmente é composta por sucata
+            eletrônica, peças de veículos, circuitos quebrados e qualquer material tecnológico disponível. Essa
+            estrutura serve tanto como proteção quanto como meio de interação com o ambiente.
+            <br><br>
+            A comunicação entre os Tecnomorfos é extremamente limitada. Eles não possuem linguagem própria desenvolvida
+            e, por isso, recorrem a tecnologias humanas para se expressar.
+            <br><br>
+            os Tecnomorfos são criaturas extremamente frágeis. Sua verdadeira essência, o núcleo energético que os
+            mantém vivos, está escondida dentro da armadura tecnológica. Esse núcleo é altamente vulnerável, se exposto,
+            mesmo que o Tecnomorfo esteja em plena capacidade vital, ele será destruído instantaneamente. Por isso, eles
+            evitam confrontos diretos e preferem se esconder ou se camuflar entre máquinas abandonadas.
+
+
+
+
+
+        </p>
+        <br>
+        <article class="porte-card" data-porte="tecnomorfo">
+            <div class="porte-card__top d-flex justify-content-center">
+                <h2 class="porte-card__title">Tecnomorfos</h2>
+            </div>
+            <ul class="porte-stats">
+                <li class="stat stat--up"><span>Resistência</span><b>+10</b></li>
+                <li class="stat stat--up"><span>Força</span><b>+6</b></li>
+                <li class="stat stat--up"><span>Furtividade</span><b>+2</b></li>
+                <li class="stat stat--down"><span>Agilidade</span><b>−5</b></li>
+                <li class="stat stat--down"><span>Carisma</span><b>−7</b></li>
+                <li class="stat stat--down"><span>Interpretação</span><b>−4</b></li>
+            </ul>
+            <p class="porte-card__personality text"><strong class="text-center">Absorver Objeto <span class="ability-card__lvl tec">LVL 1</span></strong>
+                Você pode incluir qualquer objeto tecnológico de tamanho médio ao seu ser, como baterias, celulares,
+                armas,
+                granadas etc, com isso você pode obter mais pontos em qualquer característica de acordo com o objeto,
+                como
+                resistência, inteligência, conhecimento.</p>
+        </article>
+    </main>
+    <script src="../../scripts/scriptGeral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

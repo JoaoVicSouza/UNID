@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNID - Montagem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/styleGeral.css">
+<link rel="stylesheet" href="../styles/styleMontagem.css">
+</head>
+<body>
+<nav class="sidebar" id="sidebar" aria-label="Navegação principal">
+  <div class="sidebar-inner h-100 position-relative">
+    <ul class="sidebar-links">
+      <li><a href="../index.html">Início</a></li>
+      <li class="has-submenu">
+        <div class="submenu-header">
+          <a href="seres.html">Seres</a>
+          <button class="submenu-arrow" aria-label="Expandir Seres">▾</button>
+        </div>
+        <ul class="submenu">
+          <li><a href="racas/humanos.html">Humanos</a></li>
+          <li><a href="racas/aberrados.html">Aberrados</a></li>
+          <li><a href="racas/anomalos.html">Anômalos</a></li>
+          <li><a href="racas/vampiros.html">Vampiros</a></li>
+          <li><a href="racas/impressores.html">Impressores</a></li>
+          <li><a href="racas/troncoAberto.html">Troncos Abertos</a></li>
+          <li><a href="racas/corpoFantoche.html">Corpos Fantoches</a></li>
+          <li><a href="racas/deslumbridos.html">Deslumbridos</a></li>
+          <li><a href="racas/tecnomorfos.html">Tecnomorfos</a></li>
+          <li><a href="racas/lembrados.html">Lembrados</a></li>
+          <li><a href="racas/torturados.html">Torturados</a></li>
+        </ul>
+      </li>
+      <li><a href="montagem.html" class="active">Montagem</a></li>
+      <li><a href="criacao.html">Ficha</a></li>
+      <li><a href="historia.html">A História</a></li>
+    </ul>
+    <span class="sidebar-brand position-absolute bottom-0">U.N.I.D.</span>
+  </div>
+
+  <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-controls="sidebar"
+    aria-label="Abrir menu de navegação">
+    <img src="../assets/mariposa.png" alt="" class="sidebar-toggle-img">
+  </button>
+</nav>
+<div class="overlay" id="overlay"></div>
+<div class="wrap">
+
+  <header>
+    <h1>Como criar sua ficha</h1>
+    <p class="sub">Cinco partes, nessa ordem: Info, Base, Características, Perícias e Inventário.</p>
+  </header>
+
+  <nav class="steps">
+    <a href="#info">Info</a>
+    <a href="#base">Base</a>
+    <a href="#caracteristicas">Características</a>
+    <a href="#pericias">Perícias</a>
+    <a href="#inventario">Inventário</a>
+  </nav>
+
+  <section id="info">
+    <h2>Info</h2>
+    <p>Nome, idade, raça e proficiência do seu personagem.</p>
+    <div class="box">
+      <h3>Raça</h3>
+      <p>O que você é no mundo — Humano, Aberrado, Corpo-Fantoche e outras, cerca de dez ao todo. Especificações completas em #seres-especificações.</p>
+    </div>
+    <div class="box">
+      <h3>Proficiência</h3>
+      <p>Podemos chamar de "profissão", mas não é só isso: é a capacidade que seu personagem mais domina, podendo ser praticamente qualquer coisa — Pintura, Escrita, Atletismo, Desmembramento de cadáver etc. Junto com a raça, serve para definir futuramente as características e perícias na ficha.</p>
+    </div>
+    <div class="callout">
+      <strong>Multi-raça</strong>
+      <p>Com autorização do mestre, dá pra ter duas raças. Se as perícias entrarem em conflito, vale o menor número.</p>
+    </div>
+  </section>
+
+  <section id="base">
+    <h2>Base</h2>
+    <p>Quatro números: Vida, Sanidade, Instabilidade e Absurdo.</p>
+
+    <div class="box">
+      <h3>Vida</h3>
+      <p>Seu HP. Zerou, você morre. Recupera com kits médicos ou magia.</p>
+      <span class="formula">Vida = 10 + Força + Resistência × 6</span>
+    </div>
+
+    <div class="box">
+      <h3>Sanidade</h3>
+      <p>É o quão bem você está mentalmente. Se zerar, você morre (de loucura). Recupera-se também em cenas de relaxamento, fazendo o que seu personagem gosta — os dados de recuperação geralmente são 1d10 ou 2d8. Essa categoria se interliga com a de Instabilidade.</p>
+      <span class="formula">Sanidade = 10 + Mental + Vontade × 6</span>
+    </div>
+
+    <div class="box">
+      <h3>Instabilidade</h3>
+      <p>É essencial compreender que, nessa realidade, tudo tende ao caos — e você também. As coisas não nascem como "caos", nascem neutras, mas conforme a insanidade do mundo efetua em cima delas, elas lentamente se transformam em caos. Você não nasce sendo criatura: você surge como uma figura neutra nessa realidade, mas o mundo te corrompe aos poucos.</p>
+      <p>Quanto mais instável você é, mais perto do caos — isso te garante regalias, te deixando forte e com conhecimento sobre a realidade, mas te desconecta da sua origem como ser, te deixando longe da empatia, da conexão com os seres e de habilidades específicas.</p>
+      <p>Sua barra de Instabilidade geralmente se inicia em 0, ou seja, você é um ser normal, sem grandes conexões místicas.</p>
+      <p><strong style="color:var(--bone)">Abaixo de 0:</strong> você provavelmente terá menos sanidade e estará distante do que te torna real, mas será mais forte de alguma forma, como um sentimento vivido de existência — você ganha habilidades relacionadas à destruição.</p>
+      <p><strong style="color:var(--bone)">Acima de 0:</strong> significa que você está mais estável do que nunca, e com certeza tem sanidade. Você é recompensado por ir contra o caos, um sentimento intenso de autorrealização, de caminho certo, despertando habilidades interligadas com a conexão com outros seres, moldando a realidade para o bem.</p>
+    </div>
+
+    <div class="box">
+      <h3>Absurdo</h3>
+      <p>Mana usada só pelos Anômalos, gasta para conjurar magias.</p>
+    </div>
+
+    <p class="callout" style="margin-top:1.2rem"><span style="font-size:.85rem">Instabilidade e Absurdo vêm da raça — não são distribuídos por você.</span></p>
+  </section>
+
+  <section id="caracteristicas">
+    <h2>Características</h2>
+    <p>As Características são divididas em cinco categorias básicas: Força, Agilidade, Inteligência, Conhecimento e Mental. Você tem 6 pontos para distribuir entre elas. Não há limite máximo imposto em cada característica (podendo ultrapassar 10). Também é possível reduzir uma característica até em -4 para ganhar pontos extras e adicioná-los em outras.</p>
+
+    <ul class="plain">
+      <li>Força</li>
+      <li>Agilidade</li>
+      <li>Inteligência</li>
+      <li>Conhecimento</li>
+      <li>Mental <span>refere-se à sensibilidade emocional do personagem</span></li>
+    </ul>
+
+    <div class="box">
+      <h3>Diferença entre Inteligência e Conhecimento</h3>
+      <p><strong style="color:var(--bone)">Inteligência:</strong> conhecimento geral sobre o mundo.</p>
+      <p style="margin-top:.4rem"><strong style="color:var(--bone)">Conhecimento:</strong> domínio específico, relacionado à sua proficiência, ou seja, o quão bom você é em determinada área.</p>
+    </div>
+
+    <p style="margin-top:1.2rem">Após a distribuição, os pontos servirão como complemento para testes com as perícias. Por exemplo: seu personagem tem 2 em Força. Em testes da perícia Luta (que usa Força), ele recebe +2 pontos para adicionar ao cálculo final da rolagem.</p>
+
+    <p>Com o passar das sessões, você usará bastante as características. Assim, elas evoluem, ganhando pontos adicionais nelas. Por exemplo: seu personagem tem 0 em Mental (ou seja, é frágil emocionalmente). Conforme vivencia experiências ruins e realiza testes da perícia Vontade (que usa Mental), futuramente ele ganhará pontos na característica Mental.</p>
+  </section>
+
+  <section id="pericias">
+    <h2>Perícias</h2>
+    <p>Ações do personagem — Lutar, Fugir, Resistir, Perceber, Interpretar etc. Os pontos vêm da raça e da proficiência (Aberrados, por exemplo, têm +5 em Resistência).</p>
+    <p>Teste padrão: role um d20 e some (ou subtraia) o modificador.</p>
+    <div class="box">
+      <p><strong style="color:var(--bone)">+3 em Luta:</strong> 5 no d20 + 3 = 8</p>
+      <p style="margin-top:.4rem"><strong style="color:var(--bone)">−2 em Luta:</strong> 5 no d20 − 2 = 3</p>
+    </div>
+    <div class="callout">
+      <strong>Sorte é diferente</strong>
+      <p>Em vez de d20, usa-se d2 (cara ou coroa). Mecânica completa no canal Mecânicas, seção Sorte.</p>
+    </div>
+  </section>
+
+  <section id="inventario">
+    <h2>Inventário</h2>
+    <p>Onde ficam os itens do personagem. Não é infinito: o número de espaços depende da mochila usada — essa é a única limitação.</p>
+  </section>
+
+</div>
+<script src="../scripts/scriptGeral.js"></script>
+</body>
+</html>

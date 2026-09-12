@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seres - Anômalos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/styleGeral.css">
+    <link rel="stylesheet" href="../../styles/styleRaca.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="sidebar" id="sidebar" aria-label="Navegação principal">
+        <div class="sidebar-inner h-100 position-relative">
+            <ul class="sidebar-links">
+                <li><a href="../../index.html">Início</a></li>
+                <li class="has-submenu">
+                    <div class="submenu-header">
+                        <a href="../seres.html" class="active">Seres</a>
+                        <button class="submenu-arrow" aria-label="Expandir Seres">▾</button>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="humanos.html">Humanos</a></li>
+                        <li><a href="aberrados.html">Aberrados</a></li>
+                        <li><a href="anomalos.html" class="active">Anômalos</a></li>
+                        <li><a href="vampiros.html">Vampiros</a></li>
+                        <li><a href="impressores.html">Impressores</a></li>
+                        <li><a href="troncoAberto.html">Troncos Abertos</a></li>
+                        <li><a href="corpoFantoche.html">Corpos Fantoches</a></li>
+                        <li><a href="deslumbridos.html">Deslumbridos</a></li>
+                        <li><a href="tecnomorfos.html">Tecnomorfos</a></li>
+                        <li><a href="lembrados.html">Lembrados</a></li>
+                        <li><a href="torturados.html">Torturados</a></li>
+                    </ul>
+                </li>
+                <li><a href="../montagem.html">Montagem</a></li>
+                <li><a href="../criacao.html">Ficha</a></li>
+                <li><a href="../historia.html">A História</a></li>
+            </ul>
+            <span class="sidebar-brand position-absolute bottom-0">U.N.I.D.</span>
+        </div>
+
+        <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-controls="sidebar"
+            aria-label="Abrir menu de navegação">
+            <img src="../../assets/mariposa.png" alt="" class="sidebar-toggle-img">
+        </button>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+    <main class="hero text-center">
+        <h1 class="title">Anômalos</h1>
+        <p class="text mb-0">
+            Anomalia significa irregularidade em relação ao padrão. <img src="../../assets/anômalos1.jfif.jpeg " alt=""
+                class="float center">
+            “Anômalo” é o nome elegante dado pela U.N.I.D. aos seres que muitos chamariam de “Bruxos”. Eles próprios,
+            até preferem se identificar como Magos, Bruxas, Necromantes e outros títulos semelhantes.
+            <br><br>
+            Esses indivíduos escolheram trilhar o caminho do caos da realidade, afastando-se das normas impostas pela
+            sociedade. Tal escolha os leva à insanidade, mas também lhes permite alcançar aquilo que se esconde na
+            escuridão, a Magia.
+            <br><br>
+            A magia, por sua vez, desperta medo. É associada aos grandes desastres dos últimos anos e, por isso,
+            considerada profana ou proibida. Contudo, a verdade é que não existem magias capazes de provocar tamanha
+            destruição. A essência da magia está mais ligada à criação do que à destruição. Ainda assim, o receio de
+            explorar esse conhecimento obrigou Bruxos e Bruxas a se refugiarem nas sombras.
+            <br><br>
+            Apesar disso, nos últimos anos, a magia começou a conquistar espaço, não apenas fora dos muros, mas também
+            dentro deles. Diversos Anômalos se uniram à organização U.N.I.D. para aprofundar a compreensão dos caminhos
+            mágicos. Muitos acreditam que esse movimento teve início com um grupo liderado por uma jovem bruxa chamada
+            Maya Duarte.
+            <br><br>
+            Por fim, a bruxaria é frequentemente confundida com as habilidades inatas, porém são totalmente diferentes,
+            a Magia ela é unicamente conjurada através dos Livros feitos para isso, já as habilidades inatas são algo
+            que vem de dentro do próprio ser.
+            <br><br>
+            (Podemos dizer que os Livros de Magia, na realidade, são livros que possuem habilidade inata)
+            <br><br>
+            Mecânicamente falando, livros de magia podem ser de qualquer tipo, um gibi, um livro normal, um pergaminho
+            etc.<br>
+            Para um Bruxo conjurar magia, ele deve passar em um teste de interpretação, se passar ele consegue conjurar,
+            e assim perderá uma quantidade de *Absurdo*.
+            <br><br>
+            Narrativamente falando, para um usuário interpretar a magia descrita no seu livro, ele deve oferecer sua
+            energia vital, por sorte ou técnica, o texto se revelará e Implantando uma informação impossível, que será
+            imediatamente esquecida após a magia ser lançada
+        </p>
+        <br>
+        <article class="porte-card" data-porte="bruxo">
+            <div class="porte-card__top d-flex justify-content-center">
+                <h2 class="porte-card__title">Bruxos</h2>
+            </div>
+            <ul class="porte-stats">
+                <li class="stat stat--up"><span>Absurdo</span><b>+4</b></li>
+                <li class="stat stat--up"><span>Conhecimento</span><b>+6</b></li>
+                <li class="stat stat--up"><span>Agilidade</span><b>+2</b></li>
+                <li class="stat stat--down"><span>Força</span><b>−5</b></li>
+                <li class="stat stat--down"><span>Instabilidade</span><b>−5</b></li>
+            </ul>
+            <p class="porte-card__personality"><strong>Bruxos</strong> Possuem 3 magias de nível 1.</p>
+        </article>
+    </main>
+    <script src="../../scripts/scriptGeral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

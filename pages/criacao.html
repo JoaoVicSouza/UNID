@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNID - Ficha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styleGeral.css">
+    <link rel="stylesheet" href="../styles/styleCriacao.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="criacao-page">
+
+    <nav class="sidebar" id="sidebar" aria-label="Navegação principal">
+        <div class="sidebar-inner h-100 position-relative">
+            <ul class="sidebar-links">
+                <li><a href="../index.html">Início</a></li>
+                <li class="has-submenu">
+                    <div class="submenu-header">
+                        <a href="seres.html">Seres</a>
+                        <button class="submenu-arrow" aria-label="Expandir Seres">▾</button>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="racas/humanos.html">Humano</a></li>
+                        <li><a href="racas/aberrados.html">Aberrados</a></li>
+                        <li><a href="racas/anomalos.html">Anômalos</a></li>
+                        <li><a href="racas/vampiros.html">Vampiros</a></li>
+                        <li><a href="racas/impressores.html">Impressores</a></li>
+                        <li><a href="racas/troncoAberto.html">Troncos Abertos</a></li>
+                        <li><a href="racas/corpoFantoche.html">Corpos Fantoches</a></li>
+                        <li><a href="racas/deslumbridos.html">Deslumbridos</a></li>
+                        <li><a href="racas/tecnomorfos.html">Tecnomorfos</a></li>
+                        <li><a href="racas/lembrados.html">Lembrados</a></li>
+                        <li><a href="racas/torturados.html">Torturados</a></li>
+                    </ul>
+                </li>
+                <li><a href="montagem.html">Montagem</a></li>
+                <li><a href="criacao.html" class="active">Ficha</a></li>
+                <li><a href="historia.html">A História</a></li>
+            </ul>
+            <span class="sidebar-brand position-absolute bottom-0">U.N.I.D.</span>
+        </div>
+
+        <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-controls="sidebar"
+            aria-label="Abrir menu de navegação">
+            <img src="../assets/mariposa.png" alt="" class="sidebar-toggle-img">
+        </button>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="page-tabs" role="tablist" aria-label="Conteúdo da ficha">
+        <button id="fichaTab" type="button" role="tab" aria-selected="true" aria-controls="fichaPanel">Ficha</button>
+        <button id="dadosTab" type="button" role="tab" aria-selected="false" aria-controls="dadosPanel"
+            tabindex="-1">Dados</button>
+    </div>
+
+    <main class="ficha" id="fichaPanel" role="tabpanel" aria-labelledby="fichaTab">
+        <h1 class="text-center">Ficha de Personagem</h1>
+        <form>
+            <fieldset>
+                <legend>Info</legend>
+                <div class="form-group base-inputs">
+                    <div>
+                        <div id="portrait-container" class="portrait-clickable">
+                            <img id="portrait-img"
+                                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 260'><rect width='200' height='260' fill='%232a1720'/><circle cx='100' cy='95' r='45' fill='%23c97b91' opacity='0.35'/><path d='M40 245c8-58 44-88 60-88s52 30 60 88z' fill='%23c97b91' opacity='0.35'/></svg>"
+                                alt="Retrato do personagem">
+                            <input type="file" id="portrait-input" accept="image/*" style="display: none;">
+                            <div class="portrait-overlay">Clique para alterar</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div><label for="nome">Nome:</label><input type="text" id="nome" name="nome"></div>
+                        <div><label for="idade">Idade:</label><input type="number" id="idade" name="idade"></div>
+                        <div><label for="raca">Raça:</label><input type="text" id="raca" name="raca"></div>
+                        <div><label for="proficiencia">Proficiência:</label><input type="text" id="proficiencia"
+                                name="proficiencia"></div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Base</legend>
+                <div class="form-group base-bars" style="display:flex; flex-direction:column; gap:10px;">
+                    <div class="base-bar-field">
+                        <label for="vida">Vida:</label>
+                        <div class="base-bar" aria-hidden="true"></div>
+                        <div class="base-bar-values">
+                            <input type="number" id="vida" name="vida" value="100" min="0" aria-label="Vida atual">
+                            <span>/</span>
+                            <input type="number" id="vida-max" name="vida-max" value="100" min="1"
+                                aria-label="Vida máxima">
+                        </div>
+                    </div>
+                    <div class="base-bar-field">
+                        <label for="sanidade">Sanidade:</label>
+                        <div class="base-bar" aria-hidden="true"></div>
+                        <div class="base-bar-values">
+                            <input type="number" id="sanidade" name="sanidade" value="100" min="0"
+                                aria-label="Sanidade atual">
+                            <span>/</span>
+                            <input type="number" id="sanidade-max" name="sanidade-max" value="100" min="1"
+                                aria-label="Sanidade máxima">
+                        </div>
+                    </div>
+                    <div class="base-bar-field">
+                        <label for="absurdo">Absurdo:</label>
+                        <div class="base-bar" aria-hidden="true"></div>
+                        <div class="base-bar-values">
+                            <input type="number" id="absurdo" name="absurdo" value="100" min="0"
+                                aria-label="Absurdo atual">
+                            <span>/</span>
+                            <input type="number" id="absurdo-max" name="absurdo-max" value="100" min="1"
+                                aria-label="Absurdo máximo">
+                        </div>
+                    </div>
+                    <div class="base-instability">
+                        <label for="instabilidade">Instabilidade:</label>
+                        <input type="number" id="instabilidade" name="instabilidade" min="0">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Características</legend>
+                <div class="form-group fixed-inputs">
+                    <div><label for="forca">Força:</label><input type="number" id="forca" name="forca" min="-4"></div>
+                    <div><label for="agilidade">Agilidade:</label><input type="number" id="agilidade" name="agilidade"
+                            min="-4"></div>
+                    <div><label for="inteligencia">Inteligência:</label><input type="number" id="inteligencia"
+                            name="inteligencia" min="-4"></div>
+                    <div><label for="conhecimento">Conhecimento:</label><input type="number" id="conhecimento"
+                            name="conhecimento" min="-4"></div>
+                    <div><label for="mental">Mental:</label><input type="number" id="mental" name="mental" min="-4">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Perícias</legend>
+                <div class="form-group fixed-inputs">
+                    <div><label for="Resistencia">Resistência:</label><input type="number" id="Resistencia"
+                            name="Resistencia" min="-4"></div>
+                    <div><label for="Luta">Luta:</label><input type="number" id="Luta" name="Luta" min="-4"></div>
+                    <div><label for="Pontaria">Pontaria:</label><input type="number" id="Pontaria" name="Pontaria" min="-4">
+                    </div>
+                    <div><label for="Fuga">Fuga:</label><input type="number" id="Fuga" name="Fuga" min="-4"></div>
+                    <div><label for="Percepcao">Percepção:</label><input type="number" id="Percepcao" name="Percepcao" min="-4">
+                    </div>
+                    <div><label for="Furtividade">Furtividade:</label><input type="number" id="Furtividade"
+                            name="Furtividade" min="-4"></div>
+                    <div><label for="Interpretacao">Interpretação:</label><input type="number" id="Interpretacao"
+                            name="Interpretacao" min="-4"></div>
+                    <div><label for="Carisma">Carisma:</label><input type="number" id="Carisma" name="Carisma" min="-4"></div>
+                    <div><label for="Area">Área:</label><input type="number" id="Area" name="Area" min="-4"></div>
+                    <div><label for="Fe">Fé:</label><input type="number" id="Fe" name="Fe" min="-4"></div>
+                    <div><label for="Vontade">Vontade:</label><input type="number" id="Vontade" name="Vontade" min="-4"></div>
+                    <div><label for="Intimidacao">Intimidação:</label><input type="number" id="Intimidacao"
+                            name="Intimidacao" min="-4"></div>
+                    <div><label for="Sorte">Sorte:</label><input type="number" id="Sorte" name="Sorte" min="-4"></div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Inventário</legend>
+                <textarea id="inventario" name="inventario"></textarea>
+            </fieldset>
+        </form>
+        <div>
+            <button id="btnExportar" type="button">Exportar Ficha</button>
+            <button id="btnImportar" type="button">Importar Ficha</button>
+            <input type="file" id="importFile" accept="application/json" hidden>
+        </div>
+    </main>
+
+    <main class="rolagem" id="dadosPanel" role="tabpanel" aria-labelledby="dadosTab" hidden>
+        <h1 class="mb-5">Rolagem de dados</h1>
+        <div class="d2">
+            <h2>D2:</h2>
+            <div class="mariD2" id="mariD2">
+                <h1 class="mariD2-front">2</h1>
+                <h1 class="mariD2-back">1</h1>
+            </div>
+            <button id="rollD2" type="button">Role!</button>
+        </div>
+        <div class="rolagemLivre">
+            <h2>Rolagem Livre</h2>
+            <div>
+                <form class="d-flex flex-column gap-2 align-items-center mt-5">
+                    <div class="base-instability">
+                        <label for="diceSides">Número de lados:</label>
+                        <input type="number" id="diceSides" name="diceSides" min="1" value="20">
+                    </div>
+                    <div class="base-instability">
+                        <label for="diceCount">Número de dados:</label>
+                        <input type="number" id="diceCount" name="diceCount" min="1" value="1">
+                    </div>
+                    <button id="rollAuto" type="button">Rolar</button>
+                    <div id="rollDiceResults" class="roll-dice-results" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="../scripts/scriptGeral.js"></script>
+    <script src="../scripts/scriptFicha.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

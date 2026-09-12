@@ -1,0 +1,618 @@
+:root {
+    --porte-grande: #b3492f;
+    --porte-medio: #c9a13b;
+    --porte-pequeno: #4f7a5c;
+    --bruxo: #7c4dbf;
+    --vampiro: #7E0000;
+    --impresso: #D1BC97;
+    --corpo-fantoche: #6b7fb8;
+    --corpo-automato: #8a8a8a;
+    --corpo-petrificado: #7d7460;
+    --tronco-accent: #2f4f9e;
+    --extinto-critico: #8a2e20;
+    --torturado-accent: #6b1f2a;
+    --roll-fail: #8a2e20;
+    --roll-success: #2f6b3c;
+    --page-bg: #0c0a0e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--page-bg);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem 1.75rem;
+    padding-left: 2.75rem;
+}
+
+.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 2.1rem;
+    line-height: 1.25;
+    margin: 0 auto 1.25rem;
+    max-width: 22ch;
+}
+
+.text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(59, 36, 48, 0.8);
+    max-width: 42ch;
+    margin: 0 auto 2rem;
+    text-align: justify;
+}
+
+.float {
+    float: left;
+    width: 500px;
+    max-width: 60%;
+    height: auto;
+    margin-right: 12px;
+    border-radius: 8px;
+}
+
+.float.center {
+    max-width: 100%;
+    margin: 0 auto;
+    float: none;
+}
+
+/* ============================================
+   BASE COMUM A TODOS OS CARDS
+   (porte, corpo, race, ability compartilham
+   forma, fundo e sombra — só muda o "recheio")
+   ============================================ */
+.porte-card,
+.corpo-card,
+.race-card,
+.ability-card {
+    position: relative;
+    max-width: 42ch;
+    margin: 0 auto 2rem;
+    background: linear-gradient(160deg, var(--tv-shell-1), var(--tv-shell-2));
+    border-radius: 14px;
+    color: var(--tv-dark);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* dois grupos de padding: cards "de grade" (porte/corpo) vs cards "solo" (race/ability) */
+.porte-card,
+.corpo-card {
+    padding: 1.25rem 1.25rem 1.4rem;
+}
+
+.race-card,
+.ability-card {
+    padding: 1.5rem 1.25rem 1.4rem;
+}
+
+/* faixa de destaque no topo: porte-card usa ::before (fica por cima, sem empurrar
+   o conteúdo); corpo/race/ability usam border-top (empurra o conteúdo) — mantido
+   assim de propósito para preservar a diferença visual entre os dois estilos */
+.porte-card {
+    overflow: hidden;
+}
+
+.porte-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--accent);
+}
+
+.corpo-card,
+.race-card,
+.ability-card {
+    border-top: 6px solid;
+}
+
+.corpo-card { border-top-color: var(--accent); }
+.race-card { border-top-color: var(--tronco-accent); }
+.ability-card { border-top-color: var(--torturado-accent); }
+
+/* mapeamento de cor por variante — um por linha, mais fácil de escanear */
+.porte-card[data-porte="grande"]   { --accent: var(--porte-grande); }
+.porte-card[data-porte="medio"]    { --accent: var(--porte-medio); }
+.porte-card[data-porte="pequeno"]  { --accent: var(--porte-pequeno); }
+.porte-card[data-porte="bruxo"]    { --accent: var(--bruxo); }
+.porte-card[data-porte="vampiro"]  { --accent: var(--vampiro); }
+.porte-card[data-porte="impresso"] { --accent: var(--impresso); }
+
+.corpo-card[data-corpo="fantoche"]    { --accent: var(--corpo-fantoche); }
+.corpo-card[data-corpo="automato"]    { --accent: var(--corpo-automato); }
+.corpo-card[data-corpo="petrificado"] { --accent: var(--corpo-petrificado); }
+
+.race-card[data-race="torturado"]::before {
+    background: var(--torturado-accent);
+}
+
+.porte-card__top {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.5rem;
+}
+
+/* indicador visual de tamanho: círculo cuja escala muda por porte */
+.porte-size {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.porte-size__dot {
+    display: block;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(33, 29, 26, 0.12);
+}
+
+.porte-card[data-porte="grande"] .porte-size__dot  { width: 26px; height: 26px; }
+.porte-card[data-porte="medio"] .porte-size__dot   { width: 18px; height: 18px; }
+.porte-card[data-porte="pequeno"] .porte-size__dot { width: 11px; height: 11px; }
+
+/* ===== títulos dos cards: mesma fonte/peso em todos, só varia tamanho e margem ===== */
+.porte-card__title,
+.corpo-card__title,
+.race-card__title,
+.ability-card__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+.porte-card__title,
+.corpo-card__title,
+.ability-card__title {
+    font-size: 1.35rem;
+}
+
+.race-card__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.corpo-card__title {
+    margin-bottom: 0.35rem;
+}
+
+.ability-card__title {
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.ability-card__lvl {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--torturado-accent);
+    color: var(--tv-shell-1);
+}
+
+.ability-card__lvl.tec {
+    background: var(--tronco-accent);
+}
+
+/* ===== descrições em itálico: porte e corpo compartilham tudo menos a margem ===== */
+.porte-card__desc,
+.corpo-card__desc {
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.porte-card__desc { margin: 0 0 1rem; }
+.corpo-card__desc { margin: 0 0 0.85rem; }
+
+.ability-card__desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin: 0 0 1.1rem;
+}
+
+/* ===== stats (pílulas) ===== */
+.porte-stats {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.race-card__stats {
+    justify-content: center;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: rgba(33, 29, 26, 0.08);
+}
+
+.stat span { opacity: 0.85; }
+.stat b { font-weight: 700; }
+.stat--up b { color: #2f6b3c; }
+.stat--down b { color: #8a2e20; }
+
+.porte-card__personality {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin: 0;
+    border-top: 1px solid rgba(33, 29, 26, 0.15);
+    padding-top: 0.75rem;
+}
+
+.porte-card__personality strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+/* ===== grids: porte e corpo são idênticos ===== */
+.porte-grid,
+.corpo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 42ch;
+    margin: 0 auto 2rem;
+}
+
+@media (max-width: 960px) {
+    .hero {
+        min-height: auto;
+        padding: 2rem 1rem;
+        padding-left: 1rem;
+    }
+
+    .float {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 1rem;
+    }
+
+    .porte-grid,
+    .corpo-grid {
+        grid-template-columns: repeat(2, minmax(220px, 320px));
+        justify-content: center;
+        max-width: 100%;
+        align-items: start;
+    }
+
+    .race-card,
+    .ability-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .title {
+        font-size: clamp(1.75rem, 8vw, 2.1rem);
+    }
+
+    .text {
+        font-size: 0.98rem;
+        line-height: 1.65;
+        max-width: none;
+        text-align: left;
+    }
+
+    .porte-grid,
+    .corpo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .porte-card,
+    .corpo-card,
+    .race-card,
+    .ability-card {
+        max-width: 100%;
+    }
+
+    .porte-card__stats,
+    .porte-stats {
+        gap: 0.4rem;
+    }
+}
+
+.corpo-card__vantagens {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.corpo-card__vantagens li {
+    font-size: 0.85rem;
+    padding-left: 1.1rem;
+    position: relative;
+}
+
+.corpo-card__vantagens li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    opacity: 0.6;
+}
+
+.extinto {
+    max-width: 42ch;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.extinto__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 0 0 0.5rem;
+}
+
+.extinto__intro {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    opacity: 0.8;
+    text-align: center;
+    margin: 0 0 1.25rem;
+}
+
+.extinto-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.extinto-step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0 0 1.25rem 0;
+}
+
+.extinto-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    bottom: -14px;
+    left: 13px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--tronco-accent), var(--extinto-critico));
+}
+
+.extinto-step:last-child {
+    padding-bottom: 0;
+}
+
+.extinto-step__marker {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: var(--tronco-accent);
+    color: var(--tv-shell-1);
+}
+
+.extinto-step p {
+    margin: 0.15rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.extinto-step--critico .extinto-step__marker { background: var(--extinto-critico); }
+.extinto-step--critico p { font-weight: 600; }
+
+.rule-block {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.rule-block:last-child { margin-bottom: 0; }
+
+.rule-block__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0 0 0.3rem;
+}
+
+.rule-block__text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin: 0;
+    opacity: 0.85;
+}
+
+.ability-card__test-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.75;
+    margin: 0 0 0.5rem;
+}
+
+.roll-range {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.roll-range__zone {
+    flex: 1;
+    padding: 0.6rem 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    color: var(--tv-shell-1);
+}
+
+.roll-range__zone--fail,
+.roll-range__zone--success {
+    flex-grow: 5;
+}
+
+.roll-range__zone--fail { background: var(--roll-fail); }
+.roll-range__zone--success { background: var(--roll-success); }
+
+.roll-range__numbers { font-weight: 700; font-size: 0.95rem; }
+.roll-range__result { font-size: 0.75rem; opacity: 0.9; }
+
+@media (max-width: 719px) {
+    .hero {
+        min-height: auto;
+        padding: 5rem 1.25rem 2rem;
+        padding-left: 1.25rem;
+        justify-content: flex-start;
+    }
+
+    .title {
+        font-size: clamp(1.75rem, 8vw, 2.1rem);
+        max-width: none;
+    }
+
+    .text {
+        font-size: 0.98rem;
+        line-height: 1.66;
+        max-width: none;
+        text-align: left;
+    }
+
+    .float {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 1rem;
+    }
+
+    .porte-grid,
+    .corpo-grid {
+        grid-template-columns: 1fr;
+        max-width: none;
+        width: min(100%, 42ch);
+    }
+
+    .porte-card,
+    .corpo-card,
+    .race-card,
+    .ability-card {
+        max-width: none;
+    }
+
+    .race-card,
+    .ability-card {
+        padding: 1.25rem 1rem 1.2rem;
+    }
+
+    .extinto {
+        max-width: none;
+    }
+
+    .roll-range {
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 980px) {
+    .porte-grid,
+    .corpo-grid {
+        grid-template-columns: repeat(2, minmax(220px, 320px));
+        justify-content: center;
+        max-width: 100%;
+        align-items: start;
+    }
+
+    .float {
+        width: min(360px, 50vw);
+    }
+}
+
+@media (min-width: 720px) {
+    .porte-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .porte-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    .race-card,
+    .ability-card {
+        max-width: 60ch;
+        padding: 1.75rem 2rem 1.6rem;
+    }
+
+    .extinto {
+        max-width: 60ch;
+    }
+
+    .sidebar {
+        width: 280px;
+    }
+
+    .hero {
+        padding-left: 4rem;
+    }
+
+    .hero-title {
+        font-size: 2.75rem;
+    }
+}
+@media (min-width: 981px) {
+    .porte-grid,
+    .corpo-grid {
+        grid-template-columns: repeat(3, minmax(240px, 320px));
+        justify-content: center;
+        max-width: 1100px;
+        margin-inline: auto;
+        align-items: start;
+    }
+}

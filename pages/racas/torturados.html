@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seres - Vampiros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/styleGeral.css">
+    <link rel="stylesheet" href="../../styles/styleRaca.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="sidebar" id="sidebar" aria-label="Navegação principal">
+        <div class="sidebar-inner h-100 position-relative">
+            <ul class="sidebar-links">
+                <li><a href="../../index.html">Início</a></li>
+                <li class="has-submenu">
+                    <div class="submenu-header">
+                        <a href="../seres.html" class="active">Seres</a>
+                        <button class="submenu-arrow" aria-label="Expandir Seres">▾</button>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="humanos.html">Humanos</a></li>
+                        <li><a href="aberrados.html">Aberrados</a></li>
+                        <li><a href="anomalos.html">Anômalos</a></li>
+                        <li><a href="vampiros.html">Vampiros</a></li>
+                        <li><a href="impressores.html">Impressores</a></li>
+                        <li><a href="troncoAberto.html">Troncos Abertos</a></li>
+                        <li><a href="corpoFantoche.html">Corpos Fantoches</a></li>
+                        <li><a href="deslumbridos.html">Deslumbridos</a></li>
+                        <li><a href="tecnomorfos.html">Tecnomorfos</a></li>
+                        <li><a href="lembrados.html">Lembrados</a></li>
+                        <li><a href="torturados.html" class="active">Torturados</a></li>
+                    </ul>
+                </li>
+                <li><a href="../montagem.html">Montagem</a></li>
+                <li><a href="../criacao.html">Ficha</a></li>
+                <li><a href="../historia.html">A História</a></li>
+            </ul>
+            <span class="sidebar-brand position-absolute bottom-0">U.N.I.D.</span>
+        </div>
+
+        <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-controls="sidebar"
+            aria-label="Abrir menu de navegação">
+            <img src="../../assets/mariposa.png" alt="" class="sidebar-toggle-img">
+        </button>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+    <main class="hero text-center">
+        <h1 class="title">Torturados</h1>
+        <p class="text mb-0">
+            <img src="../../assets/torturado1.png" alt="" class="float">
+            São criaturas que abraçaram por completo o caos da realidade, o caos que causa sofrimento, dor e
+            tristeza. Quando alguém é submetido a experiências horríveis e insuportáveis, sua essência se quebra.
+            Nesse momento, há apenas dois caminhos: desistir e morrer, ou desistir de si mesmo e transformar-se
+            em um Torturado.
+            <br><br>
+            O Torturado é a manifestação física do último sentimento que dominou a pessoa antes da transformação.
+            Pode ser ódio, tristeza, obsessão ou qualquer emoção extrema. Essas entidades não necessitam de
+            alimento ou água, mas sobrevivem do sangue, característica que interessantemente os aproxima dos
+            vampiros.
+            <br><br>
+            Os Torturados são caçados dentro dos muros, por isso evitam de viver dentro deles e moram do lado de
+            fora dos muros.
+        </p>
+        <br>
+        <article class="race-card" data-race="torturado">
+            <h2 class="race-card__title">Torturados — Criação de Personagem</h2>
+
+            <div class="rule-block">
+                <h3 class="rule-block__title">Características</h3>
+                <p class="rule-block__text">
+                    Role 1d4 para cada uma das opções (Força, Agilidade, Inteligência, Conhecimento, Mental).
+                    A menor das 5 fica negativada.
+                </p>
+            </div>
+
+            <div class="rule-block">
+                <h3 class="rule-block__title">Perícias</h3>
+                <p class="rule-block__text">
+                    Role 1d6 para cada uma. Depois role 1d4+1 para ver quantas Perícias você vai negativar.
+                </p>
+            </div>
+        </article>
+
+        <article class="ability-card" data-race="torturado">
+            <h2 class="ability-card__title">Deformação <span class="ability-card__lvl">LVL 1</span></h2>
+            <p class="ability-card__desc">
+                Todo objeto pequeno que o usuário tocar ele consegue distorcer sua forma.
+            </p>
+
+            <p class="ability-card__test-label">Teste: role 1d10</p>
+            <div class="roll-range">
+                <div class="roll-range__zone roll-range__zone--fail">
+                    <span class="roll-range__numbers">0 – 5</span>
+                    <span class="roll-range__result">Não distorce</span>
+                </div>
+                <div class="roll-range__zone roll-range__zone--success">
+                    <span class="roll-range__numbers">6 – 10</span>
+                    <span class="roll-range__result">Distorce</span>
+                </div>
+            </div>
+        </article>
+    </main>
+    <script src="../../scripts/scriptGeral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

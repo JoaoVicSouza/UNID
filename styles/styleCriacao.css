@@ -1,0 +1,610 @@
+/* ==================== TEMA DA PÁGINA DE CRIAÇÃO ==================== */
+body.criacao-page {
+    background: #150d12;
+    background-image: radial-gradient(circle at 20% 0%, rgba(201, 123, 145, 0.08), transparent 55%);
+    color: #f4e9ed;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.criacao-page,
+body.criacao-page main,
+body.criacao-page .page-tabs {
+    background: #150d12;
+    color: #f4e9ed;
+}
+
+/* ==================== FORM GROUPS ==================== */
+.form-group.fixed-inputs {
+	display: grid !important;
+	grid-template-columns: max-content 30px;
+	row-gap: 10px;
+}
+
+.form-group.fixed-inputs > div {
+	display: contents;
+}
+
+.form-group.fixed-inputs input {
+	width: 30px;
+	border: none;
+	border-bottom: 1px solid currentColor;
+	border-radius: 0;
+	background: transparent;
+	outline: none;
+}
+
+.form-group.base-inputs {
+	display: flex;
+	gap: 16px;
+	align-items: flex-start;
+}
+
+.form-group.base-inputs > div:first-child { 
+	flex: 0 0 auto; 
+}
+
+.form-group.base-inputs > div:last-child {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	min-width: 0;
+}
+
+.form-group.base-inputs > div:last-child > div {
+	display: flex;
+	align-items: baseline;
+	gap: 8px;
+}
+
+.form-group.base-inputs > div:last-child label {
+	flex: 0 0 auto;
+	min-width: 90px;
+}
+
+.form-group.base-inputs > div:last-child input { 
+	flex: 1 1 auto; 
+	min-width: 0;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid currentColor;
+	border-radius: 0;
+	background: transparent;
+	outline: none;
+}
+
+.form-group.base-inputs img {
+	display: block;
+	width: 100%;
+	max-width: 130px;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	border-radius: 10px;
+	border: 1px solid rgba(59, 36, 48, 0.55);
+}
+
+/* ==================== BASE BARS ==================== */
+.base-bar-field {
+	display: grid;
+	grid-template-columns: max-content minmax(0, 1fr) max-content;
+	align-items: center;
+	gap: 10px;
+	min-width: 0;
+}
+
+.base-bar-field label { 
+	min-width: 90px; 
+	font-weight: 600; 
+}
+
+.base-bar {
+	--progress: 100%;
+	width: 100%;
+	height: 8px;
+	margin: 0;
+	border-radius: 999px;
+	background: linear-gradient(to right, var(--rose) var(--progress), rgba(59, 36, 48, 0.18) var(--progress));
+}
+
+.base-bar-values {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.base-bar-values input {
+	width: 48px;
+	min-width: 0;
+	padding: 2px 4px;
+	border: 1px solid rgba(59, 36, 48, 0.35);
+	border-radius: 3px;
+	background: transparent;
+	color: inherit;
+	text-align: center;
+}
+
+.base-instability {
+	display: grid;
+	grid-template-columns: max-content 30px;
+	gap: 10px;
+	align-items: center;
+}
+
+.base-instability input {
+	width: 30px;
+	border: none;
+	border-bottom: 1px solid currentColor;
+	border-radius: 0;
+	background: transparent;
+	outline: none;
+	text-align: center;
+}
+
+/* ==================== DICE D2 ==================== */
+.d2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	justify-content: center;
+	perspective: 900px;
+}
+
+.d2 h2 { 
+	font-family: 'Fraunces', serif; 
+	font-weight: 500; 
+	font-size: 1.1rem; 
+	margin: 0; 
+}
+
+.mariD2 {
+	position: relative;
+	background-color: transparent;
+	background-image: url(../assets/mariposa.png);
+	background-position: center;
+	background-size: 90%;
+	background-repeat: no-repeat;
+	width: clamp(140px, 40dvw, 220px);
+	height: clamp(120px, 30dvh, 190px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	transform-style: preserve-3d;
+	transform: rotateX(-10deg) rotateY(0deg);
+	transform-origin: center;
+	transition: transform 1.7s cubic-bezier(0.22, 0.8, 0.25, 1);
+	will-change: transform;
+	margin: 0 auto;
+}
+
+.mariD2 h1 {
+	font-family: 'Fraunces', serif; 
+	font-size: 2.4rem;
+	position: absolute;
+	margin: 0;
+	backface-visibility: hidden;
+	top: 60px;
+	text-shadow: 1px 1px 2px #000, 0 0 3px #000, 0 0 8px #000;
+}
+
+.mariD2-back {
+	transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.mariD2 { 
+		transition: none; 
+	}
+}
+
+/* ==================== PORTRAIT IMAGE ==================== */
+#portrait-container {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	border-radius: 4px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+#portrait-container:hover {
+	box-shadow: 0 0 15px rgba(201, 123, 145, 0.3);
+	transform: scale(1.02);
+}
+
+#portrait-img {
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: filter 0.3s ease;
+}
+
+#portrait-container:hover #portrait-img {
+	filter: brightness(1.1) contrast(1.05);
+}
+
+.portrait-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+	color: #f4e9ed;
+	padding: 12px;
+	text-align: center;
+	font-size: 12px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	font-family: 'Manrope', sans-serif;
+}
+
+#portrait-container:hover .portrait-overlay {
+	opacity: 1;
+}
+
+/* ==================== PAGE TABS ==================== */
+.page-tabs {
+	display: flex;
+	gap: 4px;
+	max-width: 720px;
+	margin: 24px auto 0;
+	padding: 4px;
+	background: rgba(59, 36, 48, 0.35);
+	border-radius: 999px;
+}
+
+.page-tabs button {
+	flex: 1;
+	border: none;
+	background: transparent;
+	color: inherit;
+	font-family: 'Manrope', sans-serif;
+	font-weight: 600;
+	font-size: 0.9rem;
+	padding: 10px 16px;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.page-tabs button[aria-selected="true"] { 
+	background: var(--rose); 
+	color: #241017; 
+}
+
+/* ==================== FICHA MAIN ==================== */
+main.ficha {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 24px 20px 64px;
+}
+
+main.ficha h1 {
+	font-family: 'Fraunces', serif;
+	font-weight: 600;
+	font-size: clamp(1.6rem, 5vw, 2.1rem);
+	margin: 0 0 20px;
+	color: #f7ecef;
+}
+
+main.ficha fieldset {
+	border: 1px solid rgba(59, 36, 48, 0.55);
+	border-radius: 14px;
+	padding: 18px 20px 20px;
+	margin: 0 0 20px;
+	background: rgba(255, 245, 248, 0.03);
+}
+
+main.ficha legend {
+	font-family: 'Fraunces', serif;
+	font-weight: 600;
+	font-size: 1.05rem;
+	padding: 0 8px;
+	color: var(--rose);
+	background: transparent;
+	width: auto;
+	min-width: auto;
+	float: none;
+	margin: 0;
+	display: block;
+}
+
+main.ficha label {
+	font-family: 'Manrope', sans-serif;
+	font-size: 0.88rem;
+	color: rgba(244, 233, 237, 0.78);
+}
+
+/* Características: viram "selos de atributo" */
+main.ficha fieldset:nth-of-type(3) .form-group.fixed-inputs {
+	display: flex !important;
+	flex-wrap: wrap;
+	gap: 10px;
+	row-gap: 14px;
+}
+
+main.ficha fieldset:nth-of-type(3) .form-group.fixed-inputs > div {
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	flex: 1 1 82px;
+	padding: 12px 6px 10px;
+	border: 1px solid rgba(59, 36, 48, 0.5);
+	border-radius: 12px;
+	background: rgba(255, 245, 248, 0.03);
+}
+
+main.ficha fieldset:nth-of-type(3) label {
+	text-align: center;
+	font-size: 0.72rem;
+	line-height: 1.15;
+	color: rgba(244, 233, 237, 0.65);
+}
+
+main.ficha fieldset:nth-of-type(3) input {
+	width: 56px !important;
+	border: none;
+	border-bottom: 2px solid var(--rose);
+	background: transparent;
+	font-family: 'Fraunces', serif;
+	font-weight: 600;
+	font-size: 1.7rem;
+	padding: 2px 0 4px;
+	text-align: center;
+}
+
+/* Perícias: lista com linha pontilhada */
+main.ficha fieldset:nth-of-type(4) .form-group.fixed-inputs {
+	display: block !important;
+}
+
+main.ficha fieldset:nth-of-type(4) .form-group.fixed-inputs > div {
+	display: flex !important;
+	align-items: baseline;
+	gap: 8px;
+	padding: 8px 0;
+	border-bottom: 1px dashed rgba(59, 36, 48, 0.4);
+	break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+}
+
+main.ficha fieldset:nth-of-type(4) .form-group.fixed-inputs > div:last-child {
+	border-bottom: none;
+}
+
+main.ficha fieldset:nth-of-type(4) label { 
+	flex: 1 1 auto; 
+	font-size: 0.9rem; 
+}
+
+main.ficha fieldset:nth-of-type(4) input {
+	flex: 0 0 auto;
+	width: 40px !important;
+	text-align: center;
+	border: 1px solid rgba(59, 36, 48, 0.45);
+	border-radius: 999px;
+	padding: 3px 0;
+	background: rgba(255, 245, 248, 0.03);
+}
+
+/* Inventário */
+main.ficha textarea#inventario {
+	width: 100%;
+	min-height: 110px;
+	background: rgba(255, 245, 248, 0.03);
+	border: 1px solid rgba(59, 36, 48, 0.45);
+	border-radius: 10px;
+	padding: 12px;
+	resize: vertical;
+	line-height: 1.5;
+	font-family: 'Manrope', sans-serif;
+	color: #ffffff;
+}
+
+/* Botões ficha */
+main.ficha > div {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-top: 8px;
+}
+
+main.ficha button {
+	font-family: 'Manrope', sans-serif;
+	font-weight: 600;
+	font-size: 0.9rem;
+	padding: 12px 20px;
+	border-radius: 999px;
+	border: 1px solid var(--rose);
+	background: transparent;
+	color: var(--rose);
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+main.ficha button:hover {
+	background: var(--rose); 
+	color: #241017; 
+}
+
+main.ficha input:focus-visible,
+main.ficha textarea:focus-visible,
+main.ficha button:focus-visible {
+	outline: 2px solid var(--rose);
+	outline-offset: 2px;
+}
+
+/* ==================== ROLAGEM (DADOS) ==================== */
+main.rolagem {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 24px 20px 64px;
+	text-align: center;
+}
+
+main.rolagem h1 {
+	font-family: 'Fraunces', serif;
+	font-weight: 600;
+	font-size: clamp(1.6rem, 5vw, 2.1rem);
+	margin: 0 0 20px;
+	color: #f7ecef;
+}
+
+.rolagemLivre { 
+	margin-top: 40px; 
+	font-family: 'Fraunces', serif; 
+}
+
+.rolagem button {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-top: 8px;
+	justify-content: center;
+}
+
+.rolagem #rollD2,
+.rolagem #rollAuto {
+	font-family: 'Manrope', sans-serif;
+	font-weight: 600;
+	font-size: 0.9rem;
+	padding: 12px 20px;
+	border-radius: 999px;
+	border: 1px solid var(--rose);
+	background: transparent;
+	color: var(--rose);
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.rolagem #rollD2:hover,
+.rolagem #rollAuto:hover { 
+	background: var(--rose); 
+	color: #241017; 
+}
+
+.rolagem button:focus-visible {
+	outline: 2px solid var(--rose);
+	outline-offset: 2px;
+}
+
+.roll-dice-results {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	gap: 12px;
+	margin-top: 16px;
+	width: min(360px, 90vw);
+	min-height: 140px;
+}
+
+.roll-dice-results .mariposa-mini {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: clamp(78px, 17vw, 96px);
+	height: clamp(78px, 17vw, 96px);
+	background-image: url(../assets/mariposa.png);
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	transform: rotateX(-10deg) rotateY(0deg);
+	transform-style: preserve-3d;
+	transition: transform 1.7s cubic-bezier(0.22, 0.8, 0.25, 1);
+	will-change: transform;
+	animation: mariposaAppear 420ms ease both;
+}
+
+.roll-dice-results .mariposa-mini h1 {
+	font-family: 'Fraunces', serif;
+	font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+	margin: 0;
+	color: #f7ecef;
+	position: relative;
+	top: -12px;
+	left: 0;
+	backface-visibility: hidden;
+	text-align: center;
+	text-shadow: 1px 1px 2px #000, 0 0 3px #000, 0 0 8px #000;
+}
+
+.roll-dice-results .mariposa-mini:nth-child(2n) {
+	transform: rotateY(180deg);
+}
+
+@keyframes mariposaAppear {
+	from {
+		opacity: 0;
+		transform: scale(0.78) translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (min-width: 860px) {
+	main.ficha { 
+		max-width: 960px; 
+	}
+	
+	main.ficha form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"info base"
+			"carac pericias"
+			"inventario inventario";
+		gap: 24px;
+		align-items: start;
+	}
+	
+	main.ficha fieldset:nth-of-type(1) { 
+		grid-area: info; 
+		margin: 0; 
+	}
+	
+	main.ficha fieldset:nth-of-type(2) { 
+		grid-area: base; 
+		margin: 0; 
+	}
+	
+	main.ficha fieldset:nth-of-type(3) { 
+		grid-area: carac; 
+		margin: 0; 
+	}
+	
+	main.ficha fieldset:nth-of-type(4) { 
+		grid-area: pericias; 
+		margin: 0; 
+	}
+	
+	main.ficha fieldset:nth-of-type(5) { 
+		grid-area: inventario; 
+		margin: 0; 
+	}
+	
+	.form-group.base-inputs img { 
+		max-width: 160px; 
+	}
+	
+	main.ficha .form-group.fixed-inputs { 
+		row-gap: 13px; 
+	}
+	
+	main.ficha .form-group.fixed-inputs input { 
+		font-size: 1rem; 
+		text-align: center; 
+	}
+	
+	main.ficha fieldset:nth-of-type(4) .form-group.fixed-inputs {
+		columns: 2;
+		column-gap: 28px;
+	}
+}

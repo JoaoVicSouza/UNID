@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seres - Corpos Fantoches</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/styleGeral.css">
+    <link rel="stylesheet" href="../../styles/styleRaca.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="sidebar" id="sidebar" aria-label="Navegação principal">
+        <div class="sidebar-inner h-100 position-relative">
+            <ul class="sidebar-links">
+                <li><a href="../../index.html">Início</a></li>
+                <li class="has-submenu">
+                    <div class="submenu-header">
+                        <a href="../seres.html" class="active">Seres</a>
+                        <button class="submenu-arrow" aria-label="Expandir Seres">▾</button>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="humanos.html">Humanos</a></li>
+                        <li><a href="aberrados.html">Aberrados</a></li>
+                        <li><a href="anomalos.html">Anômalos</a></li>
+                        <li><a href="vampiros.html">Vampiros</a></li>
+                        <li><a href="impressores.html">Impressores</a></li>
+                        <li><a href="troncoAberto.html">Troncos Abertos</a></li>
+                        <li><a href="corpoFantoche.html" class="active">Corpos Fantoches</a></li>
+                        <li><a href="deslumbridos.html">Deslumbridos</a></li>
+                        <li><a href="tecnomorfos.html">Tecnomorfos</a></li>
+                        <li><a href="lembrados.html">Lembrados</a></li>
+                        <li><a href="torturados.html">Torturados</a></li>
+                    </ul>
+                </li>
+                <li><a href="../montagem.html">Montagem</a></li>
+                <li><a href="../criacao.html">Ficha</a></li>
+                <li><a href="../historia.html">A História</a></li>
+            </ul>
+            <span class="sidebar-brand position-absolute bottom-0">U.N.I.D.</span>
+        </div>
+
+        <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-controls="sidebar"
+            aria-label="Abrir menu de navegação">
+            <img src="../../assets/mariposa.png" alt="" class="sidebar-toggle-img">
+        </button>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+    <main class="hero text-center">
+        <h1 class="title">Corpos Fantoches</h1>
+        <p class="text mb-0">
+            
+            Alma? Até o momento não há evidências científicas concretas que comprovem sua realidade. <img src="../../assets/corpo fantoche4.png" alt="" class="float center">Embora muitas
+            pessoas acreditem na alma por razões espirituais, filosóficas ou culturais, do ponto de vista científico, o
+            fenômeno conhecido como "Corpo-Fantoche" pode ser explicado de maneira diferente.
+            <br><br>
+            Corpos-Fantoches são entidades que surgem a partir de uma conexão emocional intensa entre um ser vivo,
+            geralmente humano, e um objeto físico. Essa ligação não é meramente simbólica; ela precisa envolver um
+            vínculo afetivo profundo, como apego, amor ou lembrança significativa. Quando o indivíduo morre, e no
+            momento da morte, está em contato físico direto com este objeto, ocorre um fenômeno peculiar, onde seu DNA é
+            transferido para o objeto em questão.
+            <br><br>
+            As memórias da vida passada são perdidas no processo, mantendo apenas alguns conhecimentos básicos e
+            personalidade, geralmente como esse processo de troca de corpo tende a ser bem doloroso, um Corpo fantoche,
+            mesmo não se lembrando do que passou, já nasce com alguma habilidade inata.
+            <br><br>
+            Existem diferentes tipos de corpos que um Corpo-Fantoche pode ter, tendo então diferentes características,
+            assim como especificado a baixo:
+        </p>
+        <br>
+        <div class="corpo-grid">
+            <article class="corpo-card" data-corpo="fantoche">
+                <h2 class="corpo-card__title">Fantoche</h2>
+                <p class="corpo-card__desc">Um corpo frágil mas veloz.</p>
+
+                <ul class="corpo-card__vantagens">
+                    <li>Possui 5 ações por turno</li>
+                </ul>
+
+                <ul class="porte-stats">
+                    <li class="stat stat--up"><span>Agilidade</span><b>+8</b></li>
+                    <li class="stat stat--up"><span>Fuga</span><b>+4</b></li>
+                    <li class="stat stat--up"><span>Vontade</span><b>+2</b></li>
+                    <li class="stat stat--down"><span>Força</span><b>−7</b></li>
+                    <li class="stat stat--down"><span>HP</span><b>−5</b></li>
+                    <li class="stat stat--down"><span>Resistência</span><b>−6</b></li>
+                </ul>
+            </article>
+
+            <article class="corpo-card" data-corpo="automato">
+                <h2 class="corpo-card__title">Autômato</h2>
+                <p class="corpo-card__desc">Um robô, com um corpo resistente porém pesado.</p>
+
+                <ul class="corpo-card__vantagens">
+                    <li>Tem naturalmente 6 de defesa</li>
+                    <li>Todo dano corpo a corpo dá +6 de dano</li>
+                </ul>
+
+                <ul class="porte-stats">
+                    <li class="stat stat--up"><span>Resistência</span><b>+8</b></li>
+                    <li class="stat stat--up"><span>Luta</span><b>+4</b></li>
+                    <li class="stat stat--up"><span>Interpretação</span><b>+3</b></li>
+                    <li class="stat stat--down"><span>Agilidade</span><b>−5</b></li>
+                    <li class="stat stat--down"><span>Vontade</span><b>−4</b></li>
+                    <li class="stat stat--down"><span>Sorte</span><b>−4</b></li>
+                </ul>
+            </article>
+
+            <article class="corpo-card" data-corpo="petrificado">
+                <h2 class="corpo-card__title">Petrificado</h2>
+                <p class="corpo-card__desc">Uma estátua, possui uma resistência média e agilidade baixa, porém bem
+                    inteligente.</p>
+
+                <ul class="porte-stats">
+                    <li class="stat stat--up"><span>Força</span><b>+5</b></li>
+                    <li class="stat stat--up"><span>Resistência</span><b>+3</b></li>
+                    <li class="stat stat--up"><span>Conhecimento</span><b>+6</b></li>
+                    <li class="stat stat--down"><span>Agilidade</span><b>−5</b></li>
+                    <li class="stat stat--down"><span>Carisma</span><b>−2</b></li>
+                    <li class="stat stat--down"><span>Fuga</span><b>−4</b></li>
+                </ul>
+            </article>
+        </div>
+    </main>
+    <script src="../../scripts/scriptGeral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
