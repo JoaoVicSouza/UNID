@@ -75,6 +75,7 @@ html, body {
   text-decoration: none;
   letter-spacing: normal;
 }
+
 .race-btn[data-race="tecnomorfos"] {
   background: var(--tecnomorfo);
   color: #eaf6e9;
@@ -83,8 +84,9 @@ html, body {
   text-shadow: 0 0 4px #8fffc799,
                0 0 8px #8fffc799,
                0 0 14px #8fffc799;
+  /*border: ;
+  border-radius: ;*/
 }
-.race-btn[data-race="tecnomorfos"] { color: #eaf6e9; }
 
 .race-btn:hover,
 .race-btn:focus-visible {
