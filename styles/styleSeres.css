@@ -74,6 +74,7 @@ html, body {
   justify-content: center;
   text-decoration: none;
   letter-spacing: normal;
+  transition: transform 0.2s ease;
 }
 
 .race-btn[data-race="tecnomorfos"] {
