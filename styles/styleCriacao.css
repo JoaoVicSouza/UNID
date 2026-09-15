@@ -73,16 +73,6 @@ body.criacao-page .page-tabs {
 	outline: none;
 }
 
-.form-group.base-inputs img {
-	display: block;
-	width: 100%;
-	max-width: 130px;
-	aspect-ratio: 3 / 4;
-	object-fit: cover;
-	border-radius: 10px;
-	border: 1px solid rgba(59, 36, 48, 0.55);
-}
-
 /* ==================== BASE BARS ==================== */
 .base-bar-field {
 	display: grid;
@@ -227,9 +217,15 @@ body.criacao-page .page-tabs {
 	position: relative;
 	cursor: pointer;
 	display: inline-block;
+	width: 130px;
+	height: 170px;
+	min-width: 130px;
+	min-height: 170px;
 	border-radius: 4px;
 	overflow: hidden;
 	transition: all 0.3s ease;
+	background: rgba(59, 36, 48, 0.2);
+	border: 1px solid rgba(59, 36, 48, 0.55);
 }
 
 #portrait-container:hover {
@@ -240,7 +236,8 @@ body.criacao-page .page-tabs {
 #portrait-img {
 	display: block;
 	width: 100%;
-	height: auto;
+	height: 100%;
+	object-fit: cover;
 	transition: filter 0.3s ease;
 }
 
@@ -614,8 +611,11 @@ main.rolagem h1 {
 		margin: 0; 
 	}
 	
-	.form-group.base-inputs img { 
-		max-width: 160px; 
+	#portrait-container {
+		width: 160px;
+		height: 210px;
+		min-width: 160px;
+		min-height: 210px;
 	}
 	
 	main.ficha .form-group.fixed-inputs { 

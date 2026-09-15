@@ -7,6 +7,11 @@
   --overlay: rgba(59, 36, 48, 0.45);
 }
 
+@font-face {
+  font-family: 'Bad Robot';
+  src: url('../assets/font/badrobot.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }

@@ -6,6 +6,17 @@
   --cream: #F7F0EA;
   --fur: #6B4226;
   --gold: #C9A227;
+  --humano: #F2E6B2;
+  --aberrado: #837167;
+  --anomalo: #7D39C7;
+  --vampiro: #501318;
+  --impresso: #EDE2D0;
+  --tronco: #EA748E;
+  --fantoche: #f2552c;
+  --deslumbrido: #2d1a47;
+  --tecnomorfo: #21372b;
+  --lembrado: #300471;
+  --torturado: #949597;
 }
 
 * {
@@ -64,12 +75,48 @@ html, body {
   font-weight: 600;
   cursor: pointer;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: normal;
 }
 
-.race-btn:hover {
-  border-color: var(--rose);
-  background: #57394A;
+.race-btn {
+  color: var(--cream);
 }
+
+.race-btn[data-race="humanos"] { background: var(--humano); }
+.race-btn[data-race="aberrados"] { background: var(--aberrado); }
+.race-btn[data-race="anomalos"] { background: var(--anomalo); }
+.race-btn[data-race="vampiros"] { background: var(--vampiro); }
+.race-btn[data-race="impressores"] { background: var(--impresso); }
+.race-btn[data-race="troncoAberto"] { background: var(--tronco); }
+.race-btn[data-race="corpoFantoche"] { background: var(--fantoche); }
+.race-btn[data-race="deslumbridos"] { background: var(--deslumbrido); }
+.race-btn[data-race="tecnomorfos"] {
+  background: var(--tecnomorfo);
+  color: #eaf6e9;
+  font-family: 'Bad Robot', 'BadRobot', 'Cormorant Garamond', 'Manrope', serif;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 4px #8fffc799,
+               0 0 8px #8fffc799,
+               0 0 14px #8fffc799;
+}
+.race-btn[data-race="lembrados"] { background: var(--lembrado); }
+.race-btn[data-race="torturados"] { background: var(--torturado); }
+
+.race-btn[data-race="humanos"] { color: #654b22; }
+.race-btn[data-race="aberrados"] { color: #f7e7dd; }
+.race-btn[data-race="anomalos"] { color: #f0e6ff; }
+.race-btn[data-race="vampiros"] { color: #ffdce2; }
+.race-btn[data-race="impressores"] { color: #60491e; }
+.race-btn[data-race="troncoAberto"] { color: #4d1b2d; }
+.race-btn[data-race="corpoFantoche"] { color: #55230e; }
+.race-btn[data-race="deslumbridos"] { color: #d9b6ff; }
+.race-btn[data-race="tecnomorfos"] { color: #eaf6e9; }
+.race-btn[data-race="lembrados"] { color: #ffeaff; }
+.race-btn[data-race="torturados"] { color: #1f2023; }
 
 /* ---------- Telas maiores ---------- */
 
