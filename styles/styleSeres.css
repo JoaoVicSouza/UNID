@@ -41,12 +41,6 @@ html, body {
   text-align: center;
 }
 
-.seres-eyebrow {
-  font-size: 0.85rem;
-  color: var(--rose);
-  margin: 0 0 0.5rem;
-}
-
 .seres-title {
   font-size: 2.4rem;
   font-weight: 700;
@@ -57,22 +51,22 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
+  gap: 1.75rem;
   width: 100%;
   max-width: 320px;
 }
 
 .race-btn {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 68px;
-  border-radius: 10px;
-  border: 8px solid rgba(247, 240, 234, 0.15);
-  background: var(--plum-light);
-  color: var(--cream);
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 600;
+  height: 140px;
+  border: none;
+  background: none;
+  padding: 0;
+  text-decoration: none;
   cursor: pointer;
   z-index: 1;
   display: flex;
@@ -81,19 +75,6 @@ html, body {
   text-decoration: none;
   letter-spacing: normal;
 }
-
-.race-btn {
-  color: var(--cream);
-}
-
-.race-btn[data-race="humanos"] { background: var(--humano); }
-.race-btn[data-race="aberrados"] { background: var(--aberrado); }
-.race-btn[data-race="anomalos"] { background: var(--anomalo); }
-.race-btn[data-race="vampiros"] { background: var(--vampiro); }
-.race-btn[data-race="impressores"] { background: var(--impresso); }
-.race-btn[data-race="troncoAberto"] { background: var(--tronco); }
-.race-btn[data-race="corpoFantoche"] { background: var(--fantoche); }
-.race-btn[data-race="deslumbridos"] { background: var(--deslumbrido); }
 .race-btn[data-race="tecnomorfos"] {
   background: var(--tecnomorfo);
   color: #eaf6e9;
@@ -103,21 +84,22 @@ html, body {
                0 0 8px #8fffc799,
                0 0 14px #8fffc799;
 }
-.race-btn[data-race="lembrados"] { background: var(--lembrado); }
-.race-btn[data-race="torturados"] { background: var(--torturado); }
-
-.race-btn[data-race="humanos"] { color: #654b22; }
-.race-btn[data-race="aberrados"] { color: #f7e7dd; }
-.race-btn[data-race="anomalos"] { color: #f0e6ff; }
-.race-btn[data-race="vampiros"] { color: #ffdce2; }
-.race-btn[data-race="impressores"] { color: #60491e; }
-.race-btn[data-race="troncoAberto"] { color: #4d1b2d; }
-.race-btn[data-race="corpoFantoche"] { color: #55230e; }
-.race-btn[data-race="deslumbridos"] { color: #d9b6ff; }
 .race-btn[data-race="tecnomorfos"] { color: #eaf6e9; }
-.race-btn[data-race="lembrados"] { color: #ffeaff; }
-.race-btn[data-race="torturados"] { color: #1f2023; }
 
+.race-btn:hover,
+.race-btn:focus-visible {
+  transform: translateY(-4px);
+  outline: none;
+}
+
+.race-btn img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
 /* ---------- Telas maiores ---------- */
 
 @media (min-width: 720px) {
