@@ -1,5 +1,5 @@
-### UNID
--- Status do Projeto: Finalizado
+## UNID
+Status do Projeto: Finalizado
 ---
 ## Contexto
 Esse site foi feito sob demanda com um prazo de poucos dias. Foi feito para o sistema de RPG UNID, com o objetivo de suprir as necessidades do mestre e dos players.
